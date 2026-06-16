@@ -35,6 +35,40 @@ CREATE TABLE clients (
 );
 
 -- ============================================
+-- ASSINATURA E PAGAMENTO (MERCADO PAGO)
+-- ============================================
+
+CREATE TABLE subscriptions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  status VARCHAR(50) DEFAULT 'active', -- active, inactive, cancelled, expired
+  billing_cycle VARCHAR(50), -- monthly, annual
+  plan_name VARCHAR(100) DEFAULT 'NexUAN Pro',
+  price DECIMAL(10,2),
+  started_at TIMESTAMP DEFAULT NOW(),
+  expires_at TIMESTAMP,
+  next_billing_date TIMESTAMP,
+  mercadopago_preference_id VARCHAR(255),
+  cancelled_at TIMESTAMP,
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE payments (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  subscription_id UUID NOT NULL REFERENCES subscriptions(id) ON DELETE CASCADE,
+  user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  amount DECIMAL(10,2),
+  status VARCHAR(50), -- approved, pending, rejected
+  mercadopago_payment_id VARCHAR(255),
+  mercadopago_order_id VARCHAR(255),
+  payment_date TIMESTAMP,
+  next_payment_date TIMESTAMP,
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+
+-- ============================================
 -- MÓDULO 1: ENGENHARIA DE CARDÁPIOS
 -- ============================================
 
@@ -333,6 +367,10 @@ CREATE INDEX idx_audits_user_id ON audits(user_id);
 CREATE INDEX idx_products_client_id ON products(client_id);
 CREATE INDEX idx_invoices_client_id ON invoices(client_id);
 CREATE INDEX idx_team_members_client_id ON team_members(client_id);
+CREATE INDEX idx_subscriptions_user_id ON subscriptions(user_id);
+CREATE INDEX idx_subscriptions_status ON subscriptions(status);
+CREATE INDEX idx_payments_subscription_id ON payments(subscription_id);
+CREATE INDEX idx_payments_user_id ON payments(user_id);
 
 -- ============================================
 -- FIM DO SCHEMA
