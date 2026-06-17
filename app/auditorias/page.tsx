@@ -15,16 +15,21 @@ interface Auditoria {
 export default function AuditoriasPage() {
   const [auditorias, setAuditorias] = useState<Auditoria[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     // Buscar auditorias do banco
     const fetchAuditorias = async () => {
       try {
         const response = await fetch('/api/auditorias');
+        if (!response.ok) {
+          throw new Error('Erro ao buscar auditorias');
+        }
         const data = await response.json();
         setAuditorias(data.auditorias || []);
       } catch (error) {
         console.error('Erro ao buscar auditorias:', error);
+        setError('Erro ao carregar auditorias');
       } finally {
         setLoading(false);
       }
