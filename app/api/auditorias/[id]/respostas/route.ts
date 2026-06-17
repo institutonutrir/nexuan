@@ -8,9 +8,10 @@ const supabase = createClient(
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const { respostas } = await request.json();
 
     // Calcular conformidade
@@ -36,7 +37,7 @@ export async function POST(
         compliance_percentage: conformidadePercentual,
         notes: JSON.stringify(respostas),
       })
-      .eq('id', params.id);
+      .eq('id', id);
 
     if (updateError) throw updateError;
 
