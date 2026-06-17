@@ -12,7 +12,8 @@ export async function POST(
 ) {
   try {
     const { id } = await params;
-    const { respostas } = await request.json();
+    const body = await request.json();
+    const { respostas } = body;
 
     // Calcular conformidade
     const totalRespostas = respostas.filter((r: any) => r.resposta !== null).length;
