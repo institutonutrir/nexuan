@@ -48,7 +48,7 @@ export async function GET(request: NextRequest) {
         subscription: subscription || null,
       },
     });
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json(
       { error: 'Erro ao buscar perfil' },
       { status: 500 }
