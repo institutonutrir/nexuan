@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Outlet Fortaleza | Marcas com até 70% OFF</title>
+  <meta name="description" content="Outlet Fortaleza: moda, calçados e acessórios de marca com até 70% de desconto. Compre online ou visite nossa loja em Fortaleza - CE." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    🚚 Frete grátis em Fortaleza para compras acima de R$ 199 · Parcele em até 6x sem juros
+  </div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo" aria-label="Outlet Fortaleza - início">
+        <span class="logo__mark">OF</span>
+        <span class="logo__text">Outlet<strong>Fortaleza</strong></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#ofertas">Ofertas</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#loja">Nossa Loja</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="header__actions">
+        <button class="cart-btn" id="cartOpen" aria-label="Abrir sacola">
+          🛍️ <span class="cart-btn__count" id="cartCount">0</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <span class="badge">☀️ Liquidação de Verão</span>
+          <h1>As melhores marcas com até <span class="highlight">70% OFF</span></h1>
+          <p>Moda, calçados e acessórios originais a preço de outlet, direto do coração de Fortaleza para você.</p>
+          <div class="hero__cta">
+            <a href="#ofertas" class="btn btn--primary">Ver ofertas</a>
+            <a href="#loja" class="btn btn--ghost">Visitar a loja</a>
+          </div>
+          <ul class="hero__stats">
+            <li><strong>+5.000</strong><span>produtos</span></li>
+            <li><strong>+40</strong><span>marcas</span></li>
+            <li><strong>4,9★</strong><span>avaliação</span></li>
+          </ul>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="tag-card">
+            <span>OFF</span>
+            <strong>70%</strong>
+            <small>em peças selecionadas</small>
+          </div>
+        </div>
+      </div>
+      <div class="wave" aria-hidden="true"></div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section class="benefits container">
+      <div class="benefit"><span>✅</span><div><strong>Produtos originais</strong><p>100% garantia de autenticidade</p></div></div>
+      <div class="benefit"><span>💳</span><div><strong>Até 6x sem juros</strong><p>No cartão ou 5% OFF no Pix</p></div></div>
+      <div class="benefit"><span>🔄</span><div><strong>Troca fácil</strong><p>Até 30 dias na loja física</p></div></div>
+      <div class="benefit"><span>📦</span><div><strong>Retire na loja</strong><p>Pronto em até 2 horas</p></div></div>
+    </section>
+
+    <!-- CATEGORIAS -->
+    <section class="section container" id="categorias">
+      <div class="section__head">
+        <h2>Compre por categoria</h2>
+        <p>Encontre o que você procura em segundos</p>
+      </div>
+      <div class="categories" id="categories"></div>
+    </section>
+
+    <!-- OFERTAS -->
+    <section class="section container" id="ofertas">
+      <div class="section__head section__head--row">
+        <div>
+          <h2>Ofertas em destaque</h2>
+          <p>Estoque limitado — aproveite enquanto dura</p>
+        </div>
+        <div class="toolbar">
+          <input type="search" id="search" placeholder="Buscar produto ou marca..." aria-label="Buscar" />
+          <select id="sort" aria-label="Ordenar">
+            <option value="destaque">Destaques</option>
+            <option value="menor">Menor preço</option>
+            <option value="maior">Maior preço</option>
+            <option value="desconto">Maior desconto</option>
+          </select>
+        </div>
+      </div>
+      <div class="filters" id="filters"></div>
+      <div class="products" id="products"></div>
+      <p class="empty" id="empty" hidden>Nenhum produto encontrado. Tente outra busca 🙂</p>
+    </section>
+
+    <!-- BANNER -->
+    <section class="promo container">
+      <div>
+        <h2>Ganhe 10% OFF na primeira compra</h2>
+        <p>Cadastre seu e-mail e receba o cupom + ofertas exclusivas antes de todo mundo.</p>
+      </div>
+      <form class="newsletter" id="newsletter">
+        <input type="email" required placeholder="seu@email.com" aria-label="E-mail" />
+        <button class="btn btn--dark" type="submit">Quero meu cupom</button>
+      </form>
+    </section>
+
+    <!-- LOJA -->
+    <section class="section container store" id="loja">
+      <div class="store__info">
+        <h2>Visite nossa loja</h2>
+        <p>Venha conhecer de perto as novidades que chegam toda semana. Atendimento com carinho e aquele jeitinho cearense.</p>
+        <ul class="store__list">
+          <li><span>📍</span><div><strong>Endereço</strong><p>Av. Exemplo, 1000 — Aldeota, Fortaleza - CE</p></div></li>
+          <li><span>🕘</span><div><strong>Horário</strong><p>Seg a Sáb: 9h às 20h · Dom: 10h às 16h</p></div></li>
+          <li><span>📞</span><div><strong>Telefone / WhatsApp</strong><p>(85) 90000-0000</p></div></li>
+        </ul>
+        <a class="btn btn--primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Fortaleza+CE">Como chegar</a>
+      </div>
+      <div class="store__map">
+        <iframe title="Mapa da loja Outlet Fortaleza" loading="lazy"
+          src="https://www.google.com/maps?q=Fortaleza,CE&output=embed"></iframe>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="section container" id="depoimentos">
+      <div class="section__head">
+        <h2>Quem compra, recomenda</h2>
+      </div>
+      <div class="reviews">
+        <blockquote><p>“Achei tênis de marca pela metade do preço. Atendimento nota 10!”</p><cite>— Camila R., Meireles</cite></blockquote>
+        <blockquote><p>“Comprei pelo WhatsApp e retirei na loja no mesmo dia. Muito prático.”</p><cite>— Diego S., Messejana</cite></blockquote>
+        <blockquote><p>“Sempre tem novidade. Virei cliente fiel do outlet!”</p><cite>— Ana Paula M., Aldeota</cite></blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contato">
+    <div class="container footer__grid">
+      <div>
+        <a href="#" class="logo logo--light">
+          <span class="logo__mark">OF</span>
+          <span class="logo__text">Outlet<strong>Fortaleza</strong></span>
+        </a>
+        <p class="footer__about">Moda de marca com preço justo, no sol de Fortaleza o ano inteiro.</p>
+      </div>
+      <div>
+        <h3>Institucional</h3>
+        <ul><li><a href="#loja">Nossa loja</a></li><li><a href="#">Trabalhe conosco</a></li><li><a href="#">Política de privacidade</a></li></ul>
+      </div>
+      <div>
+        <h3>Ajuda</h3>
+        <ul><li><a href="#">Trocas e devoluções</a></li><li><a href="#">Formas de pagamento</a></li><li><a href="#">Entregas</a></li></ul>
+      </div>
+      <div>
+        <h3>Siga a gente</h3>
+        <ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">TikTok</a></li></ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Outlet Fortaleza. Todos os direitos reservados.</p>
+      <p>Pix · Cartão de crédito · Débito</p>
+    </div>
+  </footer>
+
+  <!-- SACOLA -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="cart" id="cart" aria-label="Sacola de compras" aria-hidden="true">
+    <div class="cart__head">
+      <h2>Sua sacola</h2>
+      <button class="icon-btn" id="cartClose" aria-label="Fechar sacola">✕</button>
+    </div>
+    <div class="cart__items" id="cartItems"></div>
+    <div class="cart__foot">
+      <div class="cart__total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <p class="cart__pix" id="cartPix"></p>
+      <button class="btn btn--whatsapp btn--block" id="checkout">Finalizar pelo WhatsApp</button>
+    </div>
+  </aside>
+
+  <a class="whatsapp-float" id="whatsFloat" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">💬</a>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
