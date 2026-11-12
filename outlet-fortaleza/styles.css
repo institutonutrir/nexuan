@@ -26,10 +26,8 @@ button, input, select { font: inherit; }
 .header { position: sticky; top: 0; z-index: 40; background: rgba(255, 248, 236, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 .header__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 72px; }
 .logo { display: flex; align-items: center; gap: 10px; }
-.logo__mark { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; font-weight: 800; color: var(--sea); background: linear-gradient(135deg, var(--sun), var(--orange)); }
-.logo__text { font-size: 20px; color: var(--sea); }
-.logo__text strong { color: var(--orange); font-weight: 800; }
-.logo--light .logo__text { color: var(--white); }
+.logo img { height: 46px; width: auto; }
+.logo--footer img { height: 54px; }
 .nav { display: flex; gap: 28px; font-weight: 500; }
 .nav a:hover { color: var(--orange); }
 .header__actions { display: flex; gap: 8px; align-items: center; }

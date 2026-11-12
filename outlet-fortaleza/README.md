@@ -37,3 +37,18 @@ Endereço, horário e telefone ficam na seção `#loja` de `index.html`; cores n
 ## Publicar
 
 Por ser estático, pode ser publicado em GitHub Pages, Netlify ou Vercel apontando para a pasta `outlet-fortaleza/`.
+
+## Logo
+
+Os arquivos ficam em `logo/`, em SVG (vetor, para qualquer tamanho) e PNG com fundo transparente:
+
+| Arquivo | Uso |
+| --- | --- |
+| `logo-horizontal` | Principal: site, cabeçalhos, notas fiscais |
+| `logo-horizontal-branco` | Sobre fundos escuros (rodapé, vídeos) |
+| `logo-vertical` | Fachada, sacolas, etiquetas, posts quadrados |
+| `simbolo` | Só o ícone da sacola: carimbos, etiquetas pequenas |
+| `apresentacao-logo.png` | Prancha com todas as versões |
+| `favicon` / `apple-touch-icon` | Ícone do navegador e do celular; serve também de foto de perfil |
+
+Cores: azul-mar `#023047`, azul `#219ebc`, azul-claro `#8ecae6`, sol `#ffb703`, laranja `#fb8500`. Fonte: Outfit.
